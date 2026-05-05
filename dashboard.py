@@ -62,5 +62,4 @@ def main():
     col3.plotly_chart(gf_produtos_vencidos,use_container_width=True)
     col4.plotly_chart(gf_custo_lucro, use_container_width=True)
 
-    main()
-    
+main()
