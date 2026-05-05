@@ -26,7 +26,7 @@ def main():
         title='Lucro Por Segmento',
         color='Segmento',
         text_auto=True
-)
+    )
     gf_lucro_segmento.update_layout(showlegend=False)
 
     gf_vendas_tempo = px.line(
