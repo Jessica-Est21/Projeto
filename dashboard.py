@@ -37,9 +37,9 @@ def main():
     )
 
     gf_produtos_vencidos = px.pie(
-        data_filtrada.groupby('Produto')['Unidade Vendida'].sum().reset_index(),
-        values='Unidade Vendidas', names='Produto',
-        title='Distribuição d Produtos Vendidos',
+        data_filtrada.groupby('Produto')['Unidades Vendidas'].sum().reset_index(),
+        values='Unidades Vendidas', names='Produto',
+        title='Distribuição de Produtos Vendidos',
     )
 
     custo_lucro_data = data_filtrada(['Segmento'])[['COGS','Lucro']].sum().reset_index().melt(
