@@ -22,7 +22,7 @@ def main():
 
     gf_lucro_segmento = px.bar(
         data_filtrada.groupby('Segmento')['Lucro'].sum().reset_index(),
-        x='Sgmento', y='Lucro',
+        x='Segmento', y='Lucro',
         title='Lucro Por Segmento',
         color='Segmento',
         text_auto=True
