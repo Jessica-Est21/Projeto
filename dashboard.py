@@ -42,7 +42,7 @@ def main():
         title='Distribuição de Produtos Vendidos',
     )
 
-    custo_lucro_data = data_filtrada(['Segmento'])[['COGS','Lucro']].sum().reset_index().melt(
+    custo_lucro_data = data_filtrada(['Segmento'])[['COGS', 'Lucro']].sum().reset_index().melt(
         id_vars = 'Segmento', value_vars = ['COGS','Lucro'])
     custo_lucro_data['value_formatado'] = custo_lucro_data['value'].apply(lambda x:f'R$ {x:.2}')
 
