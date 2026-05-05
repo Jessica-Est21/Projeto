@@ -37,13 +37,13 @@ def main():
     )
 
     gf_produtos_vencidos = px.pie(
-        data_filtrada.groupby('Produto')['Unidade Vendidas'].sum.reset_index(),
+        data_filtrada.groupby('Produto')['Unidade Vendidas'].sum().reset_index(),
         values='Unidade Vendidas', names='Produto',
         title='Distribuição d Produtos Vendidos',
     )
 
     custo_lucro_data = data_filtrada(['Segmento'])[['COGS','Lucro']].sum().reset_index().melt(
-        id_vars = 'Segmento', value_vars = ['COGS', 'Lucro'])
+        id_vars = 'Segmento', value_vars = ['COGS','Lucro'])
     custo_lucro_data['value_formatado'] = custo_lucro_data['value'].apply(lambda x:f'R$ {x:.2}')
 
     gf_custo_lucro = px.bar(
